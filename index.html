@@ -6,6 +6,14 @@
 l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
 l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
 (window,document,'script','Surfly');
+
+      Surfly.init({widget_key:'0dac5b0ceb9947098547aec4a68745ac'}, function(init) {
+        if (init.success) {
+        // display the default Surfly button
+          Surfly.button();
+        }
+      });
+	  
 </script>
 </head>
 <body>
