@@ -20,9 +20,13 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
         if (init.success) {
         // display the default Surfly button
         //  Surfly.button();
+          console.log("init.success");
           if(!Surfly.currentSession){
+            console.log("if(!Surfly.currentSession)");
             s = Surfly.session();
             s._settings.url = "https://www.duckduckgo.com";
+          } else {
+            console.log("else branch");
           }
         }
       });
