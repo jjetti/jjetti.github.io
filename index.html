@@ -25,8 +25,8 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
         // inside the session, hide the get help section (of id 'get_help')
         document.getElementById('get_help_button').style.display="block";
         
-        // s = Surfly.session();
-        // s._settings.url = "https://www.duckduckgo.com";
+        s = Surfly.session();
+        s._settings.url = "https://www.duckduckgo.com";
       } else {
         console.log("else branch");
       }
