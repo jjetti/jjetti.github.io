@@ -10,20 +10,28 @@ l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
 l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
 (window,document,'script','Surfly');
 
-      Surfly.init({widget_key:'0dac5b0ceb9947098547aec4a68745ac'}, function(init) {
-        if (init.success) {
-          // display the default Surfly button
-          Surfly.button();
-          console.log("init.success");
-          if(!Surfly.currentSession){
-            console.log("if(!Surfly.currentSession)");
-            s = Surfly.session();
-            s._settings.url = "https://www.duckduckgo.com";
-          } else {
-            console.log("else branch");
-          }
-        }
-      });
+  function sessionStart(){
+    Surfly.session({chat_box_color: "#87cefa", videochat: false}).startLeader();
+  }
+
+
+  Surfly.init({widget_key:'0dac5b0ceb9947098547aec4a68745ac'}, function(init) {
+    if (init.success) {
+      // display the default Surfly button
+      //Surfly.button();
+      console.log("init.success");
+      if(!Surfly.currentSession){
+        console.log("if(!Surfly.currentSession)");
+        // inside the session, hide the get help section (of id 'get_help')
+        document.getElementById('get_help_button').style.display="block";
+        
+        // s = Surfly.session();
+        // s._settings.url = "https://www.duckduckgo.com";
+      } else {
+        console.log("else branch");
+      }
+    }
+  });
 	  
 </script>
 </head>
@@ -31,5 +39,6 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 <img src="elisademo.jpg" alt="demo pic">
+<button class="my-custom-button" id="get_help_button" style="display: none" onclick="sessionStart()"></button>
 </body>
 </html>
