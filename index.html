@@ -11,6 +11,8 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
 (window,document,'script','Surfly');
 
   function sessionStart(){
+    var startButton = document.getElementById("btn-start-session");
+    startButton.disabled = "true";    
     Surfly.session({chat_box_color: "#87cefa", videochat: false, splash: false}).on('session_started', function(session, event) {
       startButton.textContent = session.pin;
     }).startLeader();
