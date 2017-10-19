@@ -15,6 +15,7 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
     startButton.disabled = "true";    
     Surfly.session({chat_box_color: "#87cefa", videochat: false, splash: false}).on('session_started', function(session, event) {
       startButton.textContent = session.pin;
+      console.log(session.pin);
     }).startLeader();
   }
 
