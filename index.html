@@ -2,73 +2,17 @@
 <html>
 <head>
 <title>
-Cobrowsing test
+giosg test
 </title>
+<!-- giosg tag -->
 <script>
-(function(s,u,r,f,l,y){s[f]=s[f]||{init:function(){s[f].q=arguments}};
-l=u.createElement(r);y=u.getElementsByTagName(r)[0];l.async=1;
-l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
-(window,document,'script','Surfly');
+(function(w, t, f) {
+  var s='script',o='_giosg',h='https://service.giosg.com',e,n;e=t.createElement(s);e.async=1;e.src=h+'/live/';
+  w[o]=w[o]||function(){(w[o]._e=w[o]._e||[]).push(arguments)};w[o]._c=f;w[o]._h=h;n=t.getElementsByTagName(s)[0];n.parentNode.insertBefore(e,n);
+})(window,document,4626);
+</script>
+<!-- giosg tag -->
 
-  function sessionStart(){
-    var startButton = document.getElementById("btn-start-session");
-    startButton.disabled = "true";    
-    Surfly.session({chat_box_color: "#87cefa", videochat: false, splash: false}).on('session_started', function(session, event) {
-      startButton.textContent = session.pin;
-      console.log(session.pin);
-    }).startLeader();
-  }
-
-
-  Surfly.init({widget_key:'0dac5b0ceb9947098547aec4a68745ac', docked_only: true}, function(init) {
-    if (init.success) {
-      // display the default Surfly button
-      //Surfly.button();
-      console.log("init.success");
-      if(!Surfly.currentSession){
-        console.log("if(!Surfly.currentSession)");
-        // inside the session, hide the get help section (of id 'get_help')
-        document.getElementById('btn-start-session').style.display="block";
-        
-        s = Surfly.session();
-        s._settings.url = "https://www.duckduckgo.com";
-      } else {
-        console.log("else branch");
-        document.getElementById('btn-start-session').style.display="block";
-      }
-    }
-  });
-	  
-</script><!-- Button styling -->
-<style type="text/css">
-  .basic-button {
-    background-color: #ffd05b;
-    width: 115px;
-    border: 1px solid #ffd05b;
-    border-radius: 33px;
-    height: 50px;
-    font-size: 14px;
-    color: #333333;
-    letter-spacing: 1px;
-    font-family: sans-serif;
-    font-weight: bold;
-    position: absolute;
-    left: 15px;
-    bottom: 15px;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
-    position: fixed;
-  }
-
-  .basic-button:hover {
-    cursor: pointer;
-  }
-
-  .basic-button p {
-    margin-top: 14px;
-    font-size: 13px;
-  }
-
-</style>
 
 
 </head>
@@ -76,6 +20,6 @@ l.src='https://cobrowsing.elisa.fi/surfly.js';y.parentNode.insertBefore(l,y);})
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 <img src="elisademo.jpg" alt="demo pic">
-<button class="basic-button" id="btn-start-session" onclick="sessionStart()">Get live help</button>
+
 </body>
 </html>
